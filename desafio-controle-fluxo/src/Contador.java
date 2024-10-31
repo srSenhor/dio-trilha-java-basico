@@ -16,10 +16,16 @@ public class Contador {
 
         cin.close();
 
-        // Tentando imprimir valores ------------------------
+        // Tentando imprimir valores -------------------------------------
 
+        
         try {
 
+            // Exemplo com valores fixos ---------------------------------
+            // count(30, 12); // Descomentar para testar a exception
+            // count(12, 30); // Descomentar para testar com valor fixo
+
+            // Valores fornecidos pelo usuário
             count(valor1, valor2);
             
         } catch (ParametroInvalidoException e) {
@@ -31,9 +37,12 @@ public class Contador {
 
     private static void count(int n1, int n2) throws ParametroInvalidoException {
 
-        // Dispara exceção se o parametro for inválido ------
+        // Dispara exceção se o parametro for inválido -------------------
 
         if (n1 > n2) throw new ParametroInvalidoException();
+
+        System.out.printf("========== Iterando de %d a %d ==================\n", n1, n2);
+
 
         int num = 0;
 
@@ -41,6 +50,8 @@ public class Contador {
             num = (i - n1) + 1;
             System.out.println("Imprimindo numero " + num);
         }
+
+        System.out.println("=================================================\n");
 
     }
 }
